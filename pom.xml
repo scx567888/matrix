@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>cool.scx</groupId>
+        <artifactId>scx-parent</artifactId>
+        <version>16</version>
+        <relativePath/>
+    </parent>
+
+    <artifactId>matrix</artifactId>
+    <packaging>jar</packaging>
+    <version>0.0.1</version>
+
+    <name>Matrix</name>
+    <url>https://github.com/scx567888/matrix</url>
+    <description>
+        Matrix
+    </description>
+
+    <developers>
+        <developer>
+            <id>scx567888</id>
+            <name>scx567888</name>
+            <email>scx567888@outlook.com</email>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://github.com/scx567888/matrix/blob/master/LICENSE</url>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:https://github.com/scx567888/matrix.git</connection>
+        <developerConnection>scm:git:https://github.com/scx567888/matrix.git</developerConnection>
+        <url>https://github.com/scx567888/matrix</url>
+    </scm>
+
+    <build>
+        <plugins>
+
+            <!-- 此插件用于将项目打包为 可执行 jar 包-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <!-- 此处因为没有类似 maven-source-plugin 插件中 excludeResources 的选项 -->
+                    <!-- 所以在这里手动排除资源文件 , 具体文件说明见下方 -->
+                    <excludes>
+                        <!-- 默认模板测试文件 -->
+                        <exclude>/c/</exclude>
+                        <!-- 默认 ssl 占位空文件 -->
+                        <exclude>/ssl/</exclude>
+                        <!-- 默认 配置文件 -->
+                        <exclude>/*.json</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>cool.scx</groupId>
+            <artifactId>scx-core</artifactId>
+            <version>${scx.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <properties>
+
+        <scx.mainClass>cool.scx.matrix.Matrix</scx.mainClass>
+        <scx.version>2.0.14</scx.version>
+
+    </properties>
+
+</project>
