@@ -84,7 +84,7 @@
     <properties>
 
         <scx.mainClass>cool.scx.matrix.Matrix</scx.mainClass>
-        <scx.version>2.0.14</scx.version>
+        <scx.version>2.0.16</scx.version>
 
     </properties>
 
